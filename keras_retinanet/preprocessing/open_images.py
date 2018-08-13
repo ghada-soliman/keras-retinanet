@@ -242,7 +242,7 @@ class OpenImagesGenerator(Generator):
     
         # modified
         #metadata_dir          = os.path.join(main_dir, metadata)
-        metadata_dir          = os.path.join(main_dir, 'openimagedatasets/datasets/datasets', metadata)
+        metadata_dir          = os.path.join(main_dir, 'openimagedatasets/datasets/datasets')
         print('metadata_dir ', metadata_dir)        
         # modified
         
