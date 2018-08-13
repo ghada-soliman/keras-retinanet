@@ -253,7 +253,10 @@ class OpenImagesGenerator(Generator):
         
         self.hierarchy          = load_hierarchy(metadata_dir, version=version)
         id_to_labels, cls_index = get_labels(metadata_dir, version=version)
-
+        
+        # modified
+        print('id_to_labels ', id_to_labels)
+        
         if os.path.exists(annotation_cache_json):
             with open(annotation_cache_json, 'r') as f:
                 self.annotations = json.loads(f.read())
@@ -266,6 +269,9 @@ class OpenImagesGenerator(Generator):
         else:
             self.id_to_labels = id_to_labels
 
+        # modified
+        print('self.annotations ', self.annotations)
+    
         self.id_to_image_id = dict([(i, k) for i, k in enumerate(self.annotations)])
 
         super(OpenImagesGenerator, self).__init__(**kwargs)
