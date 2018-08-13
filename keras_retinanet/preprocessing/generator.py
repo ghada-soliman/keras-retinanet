@@ -154,6 +154,7 @@ class Generator(object):
     def load_image_group(self, group):
         """ Load images for all images in a group.
         """
+        print('group ', group)
         return [self.load_image(image_index) for image_index in group]
 
     def random_transform_group_entry(self, image, annotations):
