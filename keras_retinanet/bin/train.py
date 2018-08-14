@@ -420,7 +420,7 @@ def main(args=None):
     train_generator, validation_generator = create_generators(args, backbone.preprocess_image)
 
     #modified
-    print('train_generator.groups ', len(train_generator.groups))
+    #print('train_generator.groups ', len(train_generator.groups))
     
     # create the model
     if args.snapshot is not None:
