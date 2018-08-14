@@ -111,7 +111,13 @@ def generate_images_annotations_json(main_dir, metadata_dir, subset, cls_index, 
     validation_image_ids = {}
 
     if version == 'v4':
-        annotations_path = os.path.join(metadata_dir, subset, '{}-annotations-bbox.csv'.format(subset))
+        #annotations_path = os.path.join(metadata_dir, subset, '{}-annotations-bbox.csv'.format(subset))
+        #modified
+        if subset == 'train':
+            annotations_path = os.path.join(metadata_dir, '{}-annotations-bbox.csv'.format("test"))
+        elif subset == 'validation':
+            annotations_path = os.path.join(metadata_dir, '{}-annotations-bbox.csv'.format("validation"))
+        #modified    
         print('annotations_path ', annotations_path) #modified
     elif version == 'challenge2018':
         validation_image_ids_path = os.path.join(metadata_dir, 'challenge-2018-image-ids-valset-od.csv')
@@ -254,8 +260,8 @@ class OpenImagesGenerator(Generator):
         # modified
     
         # modified
-        #metadata_dir          = os.path.join(main_dir, metadata)
-        metadata_dir          = os.path.join(main_dir, 'openimagedatasets/datasets/datasets')
+        #metadata_dir = os.path.join(main_dir, metadata)
+        metadata_dir = os.path.join(main_dir, 'oiddatasets/datasets/datasets')
         print('metadata_dir ', metadata_dir)        
         # modified
         
