@@ -168,9 +168,9 @@ def generate_images_annotations_json(main_dir, metadata_dir, subset, cls_index, 
             else:
                 #img_path = os.path.join(main_dir, 'images', subset, frame + '.jpg')
                 if subset == 'train':
-                    self.base_dir = os.path.join(main_dir, 'test01/test/test_kaggle', frame + '.jpg')
+                    img_path = os.path.join(main_dir, 'test01/test/test_kaggle', frame + '.jpg')
                 elif subset == 'validation':
-                    self.base_dir = os.path.join(main_dir, 'validation/validation/validation', frame + '.jpg')
+                    img_path = os.path.join(main_dir, 'validation/validation/validation', frame + '.jpg')
                     
                 #print('v4 - img_path ', img_path) #modified
 
