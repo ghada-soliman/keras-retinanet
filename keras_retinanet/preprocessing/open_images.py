@@ -192,7 +192,7 @@ def generate_images_annotations_json(main_dir, metadata_dir, subset, cls_index, 
                         raise ex
                     continue
 
-            print('image_sizes ', images_sizes) #modified
+            #print('image_sizes ', images_sizes) #modified
             
             x1 = float(row['XMin'])
             x2 = float(row['XMax'])
