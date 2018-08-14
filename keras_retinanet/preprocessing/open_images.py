@@ -114,9 +114,9 @@ def generate_images_annotations_json(main_dir, metadata_dir, subset, cls_index, 
         #annotations_path = os.path.join(metadata_dir, subset, '{}-annotations-bbox.csv'.format(subset))
         #modified
         if subset == 'train':
-            annotations_path = os.path.join(metadata_dir, '{}-annotations-bbox.csv'.format("test"))
+            annotations_path = os.path.join(metadata_dir, "test", '{}-annotations-bbox.csv'.format("test"))
         elif subset == 'validation':
-            annotations_path = os.path.join(metadata_dir, '{}-annotations-bbox.csv'.format("validation"))
+            annotations_path = os.path.join(metadata_dir, subset, '{}-annotations-bbox.csv'.format(subset))
         #modified    
         print('annotations_path ', annotations_path) #modified
     elif version == 'challenge2018':
