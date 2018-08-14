@@ -289,7 +289,7 @@ class OpenImagesGenerator(Generator):
             self.id_to_labels = id_to_labels
 
         # modified
-        print('self.annotations ', self.annotations)
+        #print('self.annotations ', self.annotations)
     
         self.id_to_image_id = dict([(i, k) for i, k in enumerate(self.annotations)])
 
