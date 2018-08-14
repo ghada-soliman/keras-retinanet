@@ -112,8 +112,10 @@ def generate_images_annotations_json(main_dir, metadata_dir, subset, cls_index, 
 
     if version == 'v4':
         annotations_path = os.path.join(metadata_dir, subset, '{}-annotations-bbox.csv'.format(subset))
+        print('annotations_path ', annotations_path) #modified
     elif version == 'challenge2018':
         validation_image_ids_path = os.path.join(metadata_dir, 'challenge-2018-image-ids-valset-od.csv')
+        print('validation_image_ids_path ', validation_image_ids_path) #modified
 
         with open(validation_image_ids_path, 'r') as csv_file:
             reader = csv.DictReader(csv_file, fieldnames=['ImageID'])
@@ -123,8 +125,10 @@ def generate_images_annotations_json(main_dir, metadata_dir, subset, cls_index, 
                 validation_image_ids[image_id] = True
 
         annotations_path = os.path.join(metadata_dir, 'challenge-2018-train-annotations-bbox.csv')
+        print('challenge-2018 - annotations_path ', annotations_path) #modified
     else:
         annotations_path = os.path.join(metadata_dir, subset, 'annotations-human-bbox.csv')
+        print('final case - annotations_path ', annotations_path) #modified
 
     fieldnames = ['ImageID', 'Source', 'LabelName', 'Confidence',
                   'XMin', 'XMax', 'YMin', 'YMax',
@@ -160,8 +164,10 @@ def generate_images_annotations_json(main_dir, metadata_dir, subset, cls_index, 
                 # We recommend participants to use the provided subset of the training set as a validation set.
                 # This is preferable over using the V4 val/test sets, as the training set is more densely annotated.
                 img_path = os.path.join(main_dir, 'images', 'train', frame + '.jpg')
+                print('challenge-2018 - img_path ', img_path) #modified
             else:
                 img_path = os.path.join(main_dir, 'images', subset, frame + '.jpg')
+                print('v4 - img_path ', img_path) #modified
 
             if frame in images_sizes:
                 width, height = images_sizes[frame]
@@ -175,6 +181,8 @@ def generate_images_annotations_json(main_dir, metadata_dir, subset, cls_index, 
                         raise ex
                     continue
 
+            print('image_sizes ', images_sizes) #modified
+            
             x1 = float(row['XMin'])
             x2 = float(row['XMax'])
             y1 = float(row['YMin'])
